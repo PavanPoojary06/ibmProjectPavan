@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Srinivas University - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0d0d0d;
+      color: #eee;
+    }
+
+    header {
+      background: #1a001f;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #b366ff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      transition: 
+        color 0.3s,
+        transform 0.25s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+
+    nav a:hover {
+      color: #e0b3ff;
+      transform: scale(1.18);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('imggg1.jpg') center/cover no-repeat;
+    }
+
+    .hero h1 {
+      background: rgba(26, 0, 31, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      color: #d9b3ff;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .content {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #b366ff;
+    }
+
+    .highlights {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+
+    .highlight {
+      background: #1a001f;
+      padding: 20px;
+      margin: 15px;
+      flex: 1 1 250px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(179, 102, 255, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .highlight:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(179, 102, 255, 0.4);
+    }
+
+    .models {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .model-card {
+      background: #1a001f;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(179, 102, 255, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .model-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(179, 102, 255, 0.5);
+    }
+
+    .model-card img {
+      width: 100%;
+      border-radius: 8px;
+      transition: opacity 0.3s ease;
+    }
+
+    .model-card img:hover {
+      opacity: 0.9;
+    }
+
+    .cta {
+      margin-top: 50px;
+      background: linear-gradient(135deg, #1a001f, #33004d);
+      padding: 40px;
+      border-radius: 15px;
+    }
+
+    .cta h2 {
+      color: #e0b3ff;
+    }
+
+    .cta button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background: #b366ff;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .cta button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.4s;
+    }
+
+    .cta button:hover::before {
+      left: 0;
+    }
+
+    .cta button:hover {
+      background: #9933ff;
+    }
+
+    footer {
+      background: #1a001f;
+      text-align: center;
+      padding: 15px;
+      color: #ccc;
+      margin-top: 40px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    footer:hover {
+      background-color: #33004d;
+      color: #fff;
+    }
+
+    /* Navigation underline animation */
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #e0b3ff;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    header h1:hover {
+      transform: scale(1.05);
+      color: #e0b3ff;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    * {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+
+  <!-- Watson Assistant Chat -->
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "fc2a34e4-24b6-4f3f-a90d-9ae3215f043c",
+      region: "au-syd",
+      serviceInstanceID: "f1324bb0-8d1a-45d3-833a-3d77eb2eb046",
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+             (window.watsonAssistantChatOptions.clientVersion || 'latest') + 
+             "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 style="color:#d9b3ff;">Welcome to Srinivas University</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="registration.html" id="navRegister">Apply</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Empowering Minds, Shaping Futures</h1>
+  </section>
+
+  <div class="content">
+    <h2>Explore Srinivas University</h2>
+    <p>Srinivas University is committed to excellence in teaching, innovation, and research. Join a community where your potential meets endless possibilities.</p>
+
+    <h2>Why Choose Srinivas University?</h2>
+    <div class="highlights">
+      <div class="highlight">
+        <h3>📚 Academics</h3>
+        <p>World-class faculty, dynamic curriculum, and hands-on learning prepare you for real-world challenges.</p>
+      </div>
+      <div class="highlight">
+        <h3>🌟 Campus Life</h3>
+        <p>Modern facilities, vibrant student clubs, and a diverse community make every day inspiring.</p>
+      </div>
+      <div class="highlight">
+        <h3>🚀 Innovation</h3>
+        <p>Cutting-edge labs and startup incubators foster creativity, research, and breakthrough ideas.</p>
+      </div>
+    </div>
+
+    <h2>Featured Departments</h2>
+    <div class="models">
+      <div class="model-card">
+        <img src="images.jpg" alt="Engineering Department" />
+        <h3>Engineering</h3>
+        <p>From mechanical to AI, develop the technologies that shape the world.</p>
+      </div>
+      <div class="model-card">
+        <img src="IMG_20220508_175232_11zon-1024x769.jpg.webp" alt="Business School" />
+        <h3>Business & Management</h3>
+        <p>Lead with innovation, strategy, and entrepreneurial thinking.</p>
+      </div>
+      <div class="model-card">
+        <img src="SRINIVAS-UNIVERSITY-LOGO.jpg" alt="Design School" />
+        <h3>Design & Arts</h3>
+        <p>Where creativity meets purpose—build your future through design thinking.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2>Join Srinivas University Today</h2>
+      <p>Apply now to become part of a university where ambition meets opportunity. Scholarships available!</p>
+      <button id="registerBtn">Apply Now</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Srinivas University. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Popup for CTA and nav Apply links
+    document.getElementById('registerBtn').onclick = function(e) {
+      e.preventDefault();
+      window.open(
+        'registration.html',
+        'Apply',
+        'width=600,height=700,top=100,left=100,resizable=yes,scrollbars=yes'
+      );
+    };
+
+    document.getElementById('navRegister').onclick = function(e) {
+      e.preventDefault();
+      window.open(
+        'registration.html',
+        'Apply',
+        'width=600,height=700,top=100,left=100,resizable=yes,scrollbars=yes'
+      );
+    };
+  </script>
+</body>
+</html>
